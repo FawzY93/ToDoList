@@ -8,8 +8,8 @@ using ToDoList.Models.ViewModels;
 
 namespace ToDoList.Models.ViewModelBuilders
 {
-    public interface IHomeGetViewModelBuilder
+    public interface IUserProfileViewModelBuilder
     {
-        HomeGetViewModel Build(User user);
+        UserProfileViewModel Build(User user);
     }
 }

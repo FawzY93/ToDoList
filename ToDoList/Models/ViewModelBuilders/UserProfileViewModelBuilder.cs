@@ -4,10 +4,10 @@ using ToDoList.Models.ViewModels;
 
 namespace ToDoList.Models.ViewModelBuilders
 {
-    public class HomeGetViewModelBuilder : IHomeGetViewModelBuilder
+    public class UserProfileViewModelBuilder : IUserProfileViewModelBuilder
     {
-        public HomeGetViewModel Build(User user) {
-            return new HomeGetViewModel
+        public UserProfileViewModel Build(User user) {
+            return new UserProfileViewModel
             {
                 Name = user.Name,
                 Age = user.Age
