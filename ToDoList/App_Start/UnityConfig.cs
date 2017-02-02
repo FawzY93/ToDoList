@@ -41,7 +41,8 @@ namespace ToDoList.App_Start
             // container.RegisterType<IProductRepository, ProductRepository>();
 
             container.RegisterType<IDataAccessLayer, DataAccessLayer>(new ContainerControlledLifetimeManager())
-                .RegisterType<IUserProfileViewModelBuilder, UserProfileViewModelBuilder>(new ContainerControlledLifetimeManager());
+                .RegisterType<IUserProfileViewModelBuilder, UserProfileViewModelBuilder>(new ContainerControlledLifetimeManager())
+                .RegisterType<IUserGetAllViewModelBuilder, UserGetAllViewModelBuilder>(new ContainerControlledLifetimeManager());
         }
     }
 }

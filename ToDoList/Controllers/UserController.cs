@@ -9,11 +9,13 @@ namespace ToDoList.Controllers
     {
         private readonly IDataAccessLayer dataAccessLayer;
         private readonly IUserProfileViewModelBuilder userProfileViewModelBuilder;
+        private readonly IUserGetAllViewModelBuilder userGetAllViewModelBuilder;
 
-        public UserController(IDataAccessLayer dataAccessLayer, IUserProfileViewModelBuilder userProfileViewModelBuilder)
+        public UserController(IDataAccessLayer dataAccessLayer, IUserProfileViewModelBuilder userProfileViewModelBuilder, IUserGetAllViewModelBuilder userGetAllViewModelBuilder)
         {
             this.dataAccessLayer = dataAccessLayer;
             this.userProfileViewModelBuilder = userProfileViewModelBuilder;
+            this.userGetAllViewModelBuilder = userGetAllViewModelBuilder;
         }
 
         public ActionResult Index ()
@@ -53,7 +55,7 @@ namespace ToDoList.Controllers
 
         public ActionResult GetAll()
         {
-            return View();
+            return View(this.userGetAllViewModelBuilder.Build());
         }
     }
 }

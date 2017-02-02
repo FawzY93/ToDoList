@@ -24,6 +24,15 @@ namespace ToDoList.DatabaseManagement
             }
         }
 
+        public List<User> getAllUsers()
+        {
+            using (var dbCntxt = this.getDatabaseContext())
+            {
+                var users = dbCntxt.Users.ToList<User>();
+                return users;
+            }
+        }
+
         public User getUser(string employeeId)
         {
              using (var dbCntxt = this.getDatabaseContext()) {
