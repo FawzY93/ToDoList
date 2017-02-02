@@ -5,32 +5,32 @@
 <h3>@ViewBag.Message</h3>
 
 <script src="~/Scripts/jquery-1.10.2.min.js"> </script>
-<script type="text/javascript" src="~/Scripts/User/Add/ValidateForm.js"> </script>
+<script type="text/javascript" src="~/Scripts/Form.js"> </script>
 
-<form id="addUserForm" name="addUser" class="form-horizontal" onsubmit="validateRequiredFields()"  action='Add' method="POST">
+<form id="addUserForm" name="addUser" class="form-horizontal" onchange="responsive([['name', 'namediv'], ['age', 'agediv'], ['id', 'iddiv']])" action='@Url.Action("Add", "User")' method="POST">
     <fieldset>
-        <div class="control-group">
+        <div id="namediv" class="control-group">
             <!-- Username -->
             <label class="control-label" for="name">Username</label>
             <div class="controls">
-                <input type="text" id="name" name="name" placeholder="" class="input-xlarge">  *
+                <input type="text" required="required" id="name" name="name" placeholder="" class="input-xlarge">  *
             </div>
         </div>
 
-        <div class="control-group">
+        <div id="agediv" class="control-group">
             <!-- Age -->
             <label class="control-label" for="age">Age</label>
             <div class="controls">
-                <input type="number" min="0" max="150" step="1" id="age" name="age" placeholder="" class="input-xlarge">  *
+                <input type="number" required="required" min="0" max="150" step="1" id="age" name="age" placeholder="" class="input-xlarge">  *
                 <p class="help-block">Please provide your Age</p>
             </div>
         </div>
 
-        <div class="control-group">
+        <div id="iddiv" class="control-group">
             <!-- ID -->
             <label class="control-label" for="id">ID</label>
             <div class="controls">
-                <input type="number" min="0" step="1" id="id" name="id" placeholder="" class="input-xlarge">  *
+                <input type="number" required="required" min="0" step="1" id="id" name="id" placeholder="" class="input-xlarge">  *
                 <p class="help-block">Please provide your ID</p>
             </div>
         </div>

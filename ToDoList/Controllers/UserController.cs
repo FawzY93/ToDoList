@@ -38,7 +38,7 @@ namespace ToDoList.Controllers
             };
             if (this.dataAccessLayer.AddUser(user))
             {
-                return RedirectToAction("Profile", "User", new {id = id});
+                return RedirectToAction("Preview", "User", new {id = id});
 
             } else
             {
