@@ -23,10 +23,12 @@ namespace ToDoList.Controllers
             return RedirectToAction("GetAll", "User");
         }
 
+        [HttpPost]
         public ActionResult Preview(string id)
         {
             var user = this.dataAccessLayer.getUser(id);
             return View(this.userProfileViewModelBuilder.Build(user));
+            
         }
 
         [HttpPost]
