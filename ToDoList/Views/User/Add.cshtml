@@ -1,17 +1,48 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "Add new user";
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<script src="~/Scripts/jquery-1.10.2.min.js"> </script>
+<script type="text/javascript" src="~/Scripts/User/Add/ValidateForm.js"> </script>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<form id="addUserForm" name="addUser" class="form-horizontal" onsubmit="validateRequiredFields()"  action='Add' method="POST">
+    <fieldset>
+        <div class="control-group">
+            <!-- Username -->
+            <label class="control-label" for="name">Username</label>
+            <div class="controls">
+                <input type="text" id="name" name="name" placeholder="" class="input-xlarge">  *
+            </div>
+        </div>
+
+        <div class="control-group">
+            <!-- Age -->
+            <label class="control-label" for="age">Age</label>
+            <div class="controls">
+                <input type="number" min="0" max="150" step="1" id="age" name="age" placeholder="" class="input-xlarge">  *
+                <p class="help-block">Please provide your Age</p>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <!-- ID -->
+            <label class="control-label" for="id">ID</label>
+            <div class="controls">
+                <input type="number" min="0" step="1" id="id" name="id" placeholder="" class="input-xlarge">  *
+                <p class="help-block">Please provide your ID</p>
+            </div>
+        </div>
+
+
+        <h3 id="message"></h3>
+
+        <div class="control-group">
+            <!-- Button -->
+            <div class="controls">
+                <button class="btn btn-success">Register</button>
+            </div>
+        </div>
+    </fieldset>
+</form>
