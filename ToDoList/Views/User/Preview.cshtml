@@ -1,6 +1,6 @@
 ﻿@model ToDoList.Models.ViewModels.UserProfileViewModel
-
-<h2>@Model.Name</h2>
-<h3>@Model.Age</h3>
-
+@Scripts.Render("~/Scripts/submit.js")
+Name: @Html.Label(Model.Name)
+Age: @Html.Label(Model.Age)
+@Html.Label(Model.Status)
 <p>Use this area to provide additional information.</p>

@@ -7,9 +7,12 @@ namespace ToDoList.Models.ViewModels
 {
     public class UserProfileViewModel
     {
+       
         public string Name { get; set; }
 
         public string Age { get; set; }
+
+        public string Status { get; set; }
 
     }
 }

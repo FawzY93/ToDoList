@@ -12,5 +12,7 @@ namespace ToDoList.DatabaseManagement
         User getUser(string employeeId);
 
         bool AddUser(User user);
+
+        List<User> getAllUsers();
     }
 }
